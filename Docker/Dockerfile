@@ -32,11 +32,8 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86
 RUN /bin/bash -c "source ~/.bashrc"
 
 # 필요한 의존성 file들 설치
-RUN conda update -n base conda && \
+RUN conda update conda && \
 	conda update --all && \
-	conda create -n ai python=3.6 && \
-	conda deactivate && \
-	conda activate ai && \
 	conda install pandas
 
 # 환경 설정 세팅
